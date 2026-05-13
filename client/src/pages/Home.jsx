@@ -7,24 +7,25 @@ const Home = () => {
 
   return (
     <div>
-      {/* HERO SECTION */}
-      <div className="hero">
+      <section className="hero">
+        <p className="hero-badge">Ancient Wisdom • Modern Wellness</p>
         <h1>Welcome to {siteConfig.siteName}</h1>
-        <p>Transform your life with Yoga & Meditation</p>
-      </div>
+        <p>Transform your life with Yoga, Meditation, and Community Harmony.</p>
+        <div className="hero-cta-group">
+          <button className="btn btn-primary" onClick={() => navigate("/services")}>Explore Programs</button>
+          <button className="btn btn-secondary" onClick={() => navigate("/contact")}>Get in Touch</button>
+        </div>
+      </section>
 
-      {/* WELCOME SECTION */}
-      <div className="container">
+      <section className="container section-card">
         <h2>Welcome to {siteConfig.siteName}</h2>
-
         <p>
           Our mission is to spread the ancient wisdom of yoga, meditation, and
           spiritual awareness across the world.
         </p>
-      </div>
+      </section>
 
-      {/* PROGRAMS SECTION */}
-      <div className="programs">
+      <section className="programs">
         <h2>Our Programs</h2>
 
         <div className="program-cards">
@@ -43,10 +44,9 @@ const Home = () => {
             <p>Free yoga camps for community health and wellness.</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ABOUT SECTION */}
-      <div className="about">
+      <section className="about section-card">
         <h2>About {siteConfig.siteName}</h2>
 
         <p>
@@ -56,11 +56,10 @@ const Home = () => {
           community wellness programs.
         </p>
 
-        <button onClick={() => navigate("/about")}>Learn More</button>
-      </div>
+        <button className="btn btn-primary" onClick={() => navigate("/about")}>Learn More</button>
+      </section>
 
-      {/* DONATE SECTION */}
-      <div className="donate">
+      <section className="donate">
         <h2>Support Our Mission</h2>
 
         <p>
@@ -68,10 +67,10 @@ const Home = () => {
           us to organize free yoga camps and community health initiatives.
         </p>
 
-        <button className="donate-btn" onClick={() => navigate("/donate")}>
+        <button className="btn donate-btn" onClick={() => navigate("/donate")}>
           Donate Now
         </button>
-      </div>
+      </section>
     </div>
   );
 };
