@@ -57,17 +57,25 @@ main { width: min(92%, 1140px); margin: 0 auto; }
 .dot.active { width: 24px; background: var(--brand-1); }
 
 .donate-section { background: linear-gradient(135deg, #fff7ed, #ffffff); }
-.donation-card { max-width: 420px; margin: auto; text-align:center; padding: 30px; border-radius: 18px; background: #fff; border: 1px solid #ffedd5; box-shadow: 0 18px 34px rgba(217,119,6,.16); }
-.scan-text { color: var(--brand-1); font-weight: 700; margin: 10px 0; }
-.qr-image { width: 220px; max-width: 100%; border-radius: 12px; border:1px solid #f1f5f9; margin: 12px 0 16px; }
+.donation-card.premium-layout { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 26px; padding: 24px; border-radius: 24px; background: linear-gradient(140deg, #fff8f0 0%, #fff 70%); border: 1px solid #fed7aa; box-shadow: 0 18px 38px rgba(217,119,6,.16); }
+.donation-qr-panel { display:flex; align-items:center; justify-content:center; min-height: 100%; }
+.qr-frame { width: min(100%, 320px); padding: 18px; border-radius: 20px; background: #fff; border: 1px solid #f1f5f9; box-shadow: 0 18px 30px rgba(15,23,42,.09); }
+.qr-image { width: 100%; border-radius: 12px; display:block; }
+.donation-content h2 { margin: 8px 0 12px; }
+.donation-kicker { color: var(--brand-1); font-size: .8rem; letter-spacing: .09em; text-transform: uppercase; font-weight: 700; }
+.scan-text { color: var(--brand-1); font-weight: 600; margin-top: 14px; }
 .contact-section { display:grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: center; }
 .contact-links { display:grid; gap: 10px; margin: 16px 0; }
-.contact-links a { text-decoration:none; color:#111827; background:#fffbf7; border:1px solid #fed7aa; padding: 12px 14px; border-radius:12px; display:flex; align-items:center; gap:10px; transition: .2s ease; }
-.contact-links a:hover { transform: translateX(2px); background: #fff7ed; }
+.contact-item { text-decoration:none; color:#111827; background:#fffbf7; border:1px solid #fed7aa; padding: 14px 16px; border-radius:14px; display:flex; align-items:flex-start; gap:12px; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; box-shadow: 0 8px 16px rgba(217,119,6,.08); }
+.contact-item svg { margin-top: 3px; color: var(--brand-1); font-size: 1.1rem; flex-shrink: 0; }
+.contact-item span { display:grid; gap:2px; }
+.contact-item strong { font-size: 1rem; line-height: 1.2; }
+.contact-item small { color: var(--text-soft); font-size: .82rem; }
+.contact-item:hover { transform: translateY(-2px); box-shadow: 0 14px 26px rgba(217,119,6,.16); background: #fff7ed; }
 .contact-right { text-align:center; }
-.owner-image-wrap { border-radius: 18px; padding: 10px; background: radial-gradient(circle at center, rgba(251,146,60,.28), rgba(255,255,255,.3)); box-shadow: 0 0 50px rgba(251,146,60,.22); }
-.owner-image { width: min(100%, 320px); border-radius: 14px; }
-blockquote { margin-top: 12px; font-style: italic; color: var(--text-soft); }
+.owner-image-wrap { border-radius: 22px; padding: 12px; background: radial-gradient(circle at center, rgba(251,146,60,.28), rgba(255,255,255,.3)); box-shadow: 0 18px 40px rgba(251,146,60,.24); }
+.owner-image { width: 100%; max-width: 360px; height: 420px; object-fit: cover; object-position: center; border-radius: 16px; display:block; margin: 0 auto; }
+blockquote { margin-top: 16px; font-style: italic; color: var(--text-soft); font-size: 1.05rem; }
 .footer { text-align:center; background:#111827; color:#e5e7eb; padding: 24px 16px; margin-top: 30px; }
 
 @media (max-width: 900px) {
@@ -75,6 +83,7 @@ blockquote { margin-top: 12px; font-style: italic; color: var(--text-soft); }
   .menu { display:none; position:absolute; top:74px; right:4%; background:#fff; border-radius:12px; padding: 14px; flex-direction:column; box-shadow: 0 10px 30px rgba(0,0,0,.1); }
   .menu.menu-open { display:flex; }
   .contact-section { grid-template-columns: 1fr; }
+  .donation-card.premium-layout { grid-template-columns: 1fr; }
   .section-card { padding: 34px 20px; }
   .carousel-stage { min-height: 280px; }
 }
