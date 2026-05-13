@@ -1,29 +1,27 @@
 import React, { useState } from "react";
 import siteConfig from "../siteConfig";
 import logo from "../assets/logo.png";
-import { NavLink } from "react-router-dom";
 
 const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Programs" },
-  { to: "/events", label: "Events" },
-  { to: "/donate", label: "Donate" },
-  { to: "/contact", label: "Contact" },
+  { to: "#home", label: "Home" },
+  { to: "#about", label: "About" },
+  { to: "#programs", label: "Programs" },
+  { to: "#events", label: "Events" },
+  { to: "#donate", label: "Donate" },
+  { to: "#contact", label: "Contact" },
 ];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="navbar" role="banner">
+    <header className="navbar">
       <div className="nav-container">
-        <NavLink to="/" className="logo-area" onClick={closeMenu}>
-          <img src={logo} alt={`${siteConfig.shortName} logo`} className="logo-img" loading="lazy" />
+        <a href="#home" className="logo-area" onClick={closeMenu}>
+          <img src={logo} alt={`${siteConfig.shortName} logo`} className="logo-img" />
           <h2 className="logo-text">{siteConfig.siteName}</h2>
-        </NavLink>
+        </a>
 
         <button
           className={`menu-toggle ${menuOpen ? "open" : ""}`}
@@ -32,21 +30,13 @@ const Navbar = () => {
           aria-expanded={menuOpen}
           aria-controls="primary-menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
 
         <ul id="primary-menu" className={`menu ${menuOpen ? "menu-open" : ""}`}>
           {navLinks.map((link) => (
             <li key={link.to}>
-              <NavLink
-                to={link.to}
-                onClick={closeMenu}
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                {link.label}
-              </NavLink>
+              <a href={link.to} onClick={closeMenu}>{link.label}</a>
             </li>
           ))}
         </ul>

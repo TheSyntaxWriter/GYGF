@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./ImageCarousel.css";
-
 import img1 from "../assets/slider/yoga1.jpeg";
 import img2 from "../assets/slider/yoga2.jpeg";
 import img3 from "../assets/slider/yoga3.jpeg";
