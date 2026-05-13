@@ -1,46 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import siteConfig from "../siteConfig";
 import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/services", label: "Programs" },
+  { to: "/events", label: "Events" },
+  { to: "/donate", label: "Donate" },
+  { to: "/contact", label: "Contact" },
+];
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <div className="navbar">
+    <header className="navbar" role="banner">
       <div className="nav-container">
-        {/* LOGO AREA */}
-        <div className="logo-area">
-          <img src={logo} alt="logo" className="logo-img" />
+        <NavLink to="/" className="logo-area" onClick={closeMenu}>
+          <img src={logo} alt={`${siteConfig.shortName} logo`} className="logo-img" loading="lazy" />
           <h2 className="logo-text">{siteConfig.siteName}</h2>
-        </div>
+        </NavLink>
 
-        {/* MENU */}
-        <ul className="menu">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+        <button
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          aria-controls="primary-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-
-          <li>
-            <Link to="/services">Programs</Link>
-          </li>
-
-          <li>
-            <Link to="/events">Events</Link>
-          </li>
-
-          <li>
-            <Link to="/donate">Donate</Link>
-          </li>
-
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
+        <ul id="primary-menu" className={`menu ${menuOpen ? "menu-open" : ""}`}>
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <NavLink
+                to={link.to}
+                onClick={closeMenu}
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
-    </div>
+    </header>
   );
 };
 

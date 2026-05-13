@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import ImageCarousel from "./components/ImageCarousel";
 
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <Navbar />
 
+      <main>
       <Routes>
         <Route
           path="/"
@@ -34,6 +36,8 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/donate" element={<Donate />} />
       </Routes>
+      </main>
+      <Footer />
     </Router>
   );
 }
