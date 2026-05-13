@@ -19,7 +19,7 @@ const Navbar = () => {
     <header className="navbar">
       <div className="nav-container">
         <a href="#home" className="logo-area" onClick={closeMenu}>
-          <img src={logo} alt={`${siteConfig.shortName} logo`} className="logo-img" />
+          <img src={logo} alt={`${siteConfig.siteName} logo`} className="logo-img" />
           <h2 className="logo-text">{siteConfig.siteName}</h2>
         </a>
 

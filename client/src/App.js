@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import ImageCarousel from "./components/ImageCarousel";
 import Footer from "./components/Footer";
 import siteConfig from "./siteConfig";
-import { FaEnvelope, FaWhatsapp, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaEnvelope, FaWhatsapp, FaInstagram, FaFacebook, FaYoutube, FaPhoneAlt } from "react-icons/fa";
 import "./styles/main.css";
 
 const programs = [
@@ -15,7 +15,7 @@ const programs = [
 
 const events = [
   { title: "Free Yoga Camp", date: "Every 2nd Sunday", location: "Community Wellness Grounds" },
-  { title: "Meditation Workshop", date: "Every 4th Saturday", location: "GYGF Practice Hall" },
+  { title: "Meditation Workshop", date: "Every 4th Saturday", location: "Gayatri Yog Gurukulam Foundation Practice Hall" },
 ];
 
 function App() {
@@ -33,10 +33,8 @@ function App() {
           </div>
         </section>
 
-        <ImageCarousel />
-
         <section id="about" className="section-card">
-          <h2>About {siteConfig.shortName}</h2>
+          <h2>About {siteConfig.siteName}</h2>
           <p>
             {siteConfig.siteName} is dedicated to spreading yoga, meditation, and spiritual growth
             through meaningful, practical programs that support healthier and more conscious lives.
@@ -54,6 +52,8 @@ function App() {
             ))}
           </div>
         </section>
+
+        <ImageCarousel />
 
         <section id="events" className="section-card">
           <h2>Events</h2>
@@ -73,7 +73,7 @@ function App() {
             <h2>Support Our Mission</h2>
             <p>Your contribution helps us organize free yoga camps and wellness outreach programs.</p>
             <p className="scan-text">Scan &amp; Donate</p>
-            <img src="/assets/qr_img.png" alt="QR code to donate to GYGF" className="qr-image" loading="lazy" />
+            <img src="/assets/qr_img.png" alt="QR code to donate to Gayatri Yog Gurukulam Foundation" className="qr-image" loading="lazy" />
             <a href="#contact" className="btn btn-primary">Contribute Now</a>
           </div>
         </section>
@@ -83,20 +83,17 @@ function App() {
             <h2>Connect With Us</h2>
             <p>We welcome your support and participation in our wellness mission.</p>
             <div className="contact-links">
-              <a href="mailto:rudraksha7505021514@gmail.com"><FaEnvelope /> Email</a>
-              <a href="https://wa.me/919412335099" target="_blank" rel="noreferrer"><FaWhatsapp /> WhatsApp</a>
-              <a href="https://instagram.com/pathak.prashant.ji" target="_blank" rel="noreferrer"><FaInstagram /> Instagram</a>
-              <a href="https://facebook.com/pathak.prashant.ji" target="_blank" rel="noreferrer"><FaFacebook /> Facebook</a>
-              <a href="https://youtube.com/@TheSyntaxWriter" target="_blank" rel="noreferrer"><FaYoutube /> YouTube</a>
-            </div>
-            <div className="hero-cta-group">
-              <a className="btn btn-primary" href="https://wa.me/919412335099" target="_blank" rel="noreferrer">Join via WhatsApp</a>
-              <a className="btn btn-secondary btn-dark" href="mailto:rudraksha7505021514@gmail.com">Email Us</a>
+              <a href="mailto:vistraxindia@gmail.com"><FaEnvelope /> vistraxindia@gmail.com</a>
+              <a href="https://wa.me/919675763044" target="_blank" rel="noreferrer"><FaWhatsapp /> 9675763044</a>
+              <a href="tel:+919675763044"><FaPhoneAlt /> 9675763044</a>
+              <a href="https://instagram.com/praveenpathakyoga" target="_blank" rel="noreferrer"><FaInstagram /> @praveenpathakyoga</a>
+              <a href="https://facebook.com/Praveen.pathak.737001" target="_blank" rel="noreferrer"><FaFacebook /> Praveen.pathak.737001</a>
+              <a href="https://youtube.com/@praveenpathakyoga" target="_blank" rel="noreferrer"><FaYoutube /> @praveenpathakyoga</a>
             </div>
           </div>
           <div className="contact-right">
             <div className="owner-image-wrap">
-              <img src="/assets/contact_img.png" alt="GYGF founder portrait" className="owner-image" loading="lazy" />
+              <img src="/assets/contact_img.png" alt="Gayatri Yog Gurukulam Foundation instructor portrait" className="owner-image" loading="lazy" />
             </div>
             <blockquote>“Discipline your breath, and the mind discovers peace.”</blockquote>
           </div>
