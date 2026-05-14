@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import siteConfig from "./siteConfig";
 import { FaEnvelope, FaWhatsapp, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import "./styles/main.css";
+import heroImage from "./assets/slider/yoga1.jpeg";
+import donationQrImage from "./assets/logo.png";
+import contactImage from "./assets/slider/yoga2.jpeg";
 
 const programs = [
   { title: "Yoga Training", text: "Build flexibility, strength, and holistic balance with guided traditional practice." },
@@ -23,10 +26,10 @@ function App() {
     <>
       <Navbar />
       <main>
-        <section id="home" className="hero">
+        <section id="home" className="hero" style={{ backgroundImage: `linear-gradient(130deg, rgba(10, 14, 22, 0.72), rgba(36, 22, 10, 0.38)), url(${heroImage})` }}>
           <p className="hero-badge">Ancient Wisdom • Modern Wellness</p>
-          <h1>Welcome to {siteConfig.siteName}</h1>
-          <p>Transform your life through yoga, mindful breathing, and spiritual discipline.</p>
+          <h1><span>Welcome to</span><strong>{siteConfig.siteName}</strong></h1>
+          <p>Transforming lives through yoga, discipline, breathwork, and spiritual wellness.</p>
           <div className="hero-cta-group">
             <a className="btn btn-primary" href="#programs">Explore Programs</a>
             <a className="btn btn-secondary" href="#contact">Get in Touch</a>
@@ -72,7 +75,7 @@ function App() {
           <div className="donation-card premium-layout">
             <div className="donation-qr-panel">
               <div className="qr-frame">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=https%3A%2F%2Fwa.me%2F919675763044" alt="QR code to donate to Gayatri Yog Gurukulam Foundation" className="qr-image" loading="lazy" />
+                <img src={donationQrImage} alt="QR code to donate to Gayatri Yog Gurukulam Foundation" className="qr-image" loading="lazy" />
               </div>
             </div>
             <div className="donation-content">
@@ -113,7 +116,7 @@ function App() {
           </div>
           <div className="contact-right">
             <div className="owner-image-wrap">
-              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80" alt="Yoga practitioner in a calm meditative pose" className="owner-image" loading="lazy" />
+              <img src={contactImage} alt="Yoga practitioner in a calm meditative pose" className="owner-image" loading="lazy" />
             </div>
             <blockquote>“Discipline your breath, and the mind discovers peace.”</blockquote>
           </div>
