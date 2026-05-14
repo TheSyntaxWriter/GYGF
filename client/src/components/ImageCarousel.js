@@ -1,34 +1,38 @@
 import React, { useState, useEffect } from "react";
-import img1 from "../assets/slider/yoga1.jpeg";
-import img2 from "../assets/slider/yoga2.jpeg";
-import img3 from "../assets/slider/yoga3.jpeg";
-import img4 from "../assets/slider/yoga4.jpeg";
-import img5 from "../assets/slider/yoga5.jpeg";
+import img1 from "../assets/slider/yoga1.png";
+import img2 from "../assets/slider/yoga2.png";
+import img3 from "../assets/slider/yoga3.png";
+import img4 from "../assets/slider/yoga4.png";
+import img5 from "../assets/slider/yoga5.png";
 
 const images = [
   {
     src: img1,
     alt: "Yoga group practicing outdoors",
     title: "Holistic Daily Practice",
-    subtitle: "Traditional yoga sessions for strength, flexibility, and inner harmony.",
+    subtitle:
+      "Traditional yoga sessions for strength, flexibility, and inner harmony.",
   },
   {
     src: img2,
     alt: "Meditative yoga session in nature",
     title: "Mindful Stillness",
-    subtitle: "Guided breath and meditation routines for emotional clarity and calm.",
+    subtitle:
+      "Guided breath and meditation routines for emotional clarity and calm.",
   },
   {
     src: img3,
     alt: "Yoga posture training class",
     title: "Posture & Discipline",
-    subtitle: "Structured classes that cultivate grace, focus, and body awareness.",
+    subtitle:
+      "Structured classes that cultivate grace, focus, and body awareness.",
   },
   {
     src: img4,
     alt: "Mindfulness and breathing practice",
-    title: "Sacred Breathwork",
-    subtitle: "Pranayama-centered training to support balance and deep restoration.",
+    title: "Inner Strength & Control",
+    subtitle:
+      "Dedicated practice for stability, flexibility, and inner harmony.",
   },
   {
     src: img5,
@@ -50,10 +54,16 @@ function ImageCarousel() {
   }, []);
 
   return (
-    <section className="carousel-wrapper section-card" aria-label="Wellness highlights">
+    <section
+      className="carousel-wrapper section-card"
+      aria-label="Wellness highlights"
+    >
       <div className="carousel-heading">
         <h2>Wellness Gallery</h2>
-        <p>A glimpse into the spiritual and wellness journey at Gayatri Yog Gurukulam Foundation.</p>
+        <p>
+          A glimpse into the spiritual and wellness journey at Gayatri Yog
+          Gurukulam Foundation.
+        </p>
       </div>
 
       <div className="carousel-stage">
@@ -63,7 +73,11 @@ function ImageCarousel() {
             className={`carousel-slide ${imageIndex === index ? "is-active" : ""}`}
             aria-hidden={imageIndex !== index}
           >
-            <img src={image.src} alt={image.alt} loading={imageIndex === index ? "eager" : "lazy"} />
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading={imageIndex === index ? "eager" : "lazy"}
+            />
             <div className="slide-overlay">
               <h3>{image.title}</h3>
               <p>{image.subtitle}</p>
