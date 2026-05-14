@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0fde89ce.css",
+    "main.js": "/static/js/main.bab6447d.js",
+    "static/media/yoga2.png": "/static/media/yoga2.34ca12bef21a911e68ca.png",
+    "static/media/yoga4.png": "/static/media/yoga4.254b14550d418bae85fa.png",
+    "static/media/yoga5.png": "/static/media/yoga5.ac5369e0b492c37852e1.png",
+    "static/media/yoga3.png": "/static/media/yoga3.dad0307b599715944cae.png",
+    "static/media/yoga1.png": "/static/media/yoga1.deb5fd0f87bb2e05bc85.png",
+    "static/media/logo.png": "/static/media/logo.44b18c51d2b5437c4cb0.png",
+    "static/media/img01.jpeg": "/static/media/img01.f49543af99d4c7fe8f8d.jpeg",
+    "static/media/contact_img.jpeg": "/static/media/contact_img.3da3ab540a334d66862d.jpeg",
+    "static/media/qr_img.jpeg": "/static/media/qr_img.7ad86a16eabdfa577c8c.jpeg",
+    "index.html": "/index.html",
+    "main.0fde89ce.css.map": "/static/css/main.0fde89ce.css.map",
+    "main.bab6447d.js.map": "/static/js/main.bab6447d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0fde89ce.css",
+    "static/js/main.bab6447d.js"
+  ]
+}
