@@ -3,8 +3,11 @@ import Navbar from "./components/Navbar";
 import ImageCarousel from "./components/ImageCarousel";
 import Footer from "./components/Footer";
 import siteConfig from "./siteConfig";
-import { FaEnvelope, FaWhatsapp, FaInstagram, FaFacebook, FaYoutube, FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope, FaWhatsapp, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import "./styles/main.css";
+import heroImage from "./assets/slider/yoga1.jpeg";
+import donationQrImage from "./assets/logo.png";
+import contactImage from "./assets/slider/yoga2.jpeg";
 
 const programs = [
   { title: "Yoga Training", text: "Build flexibility, strength, and holistic balance with guided traditional practice." },
@@ -23,10 +26,10 @@ function App() {
     <>
       <Navbar />
       <main>
-        <section id="home" className="hero">
+        <section id="home" className="hero" style={{ backgroundImage: `linear-gradient(130deg, rgba(10, 14, 22, 0.72), rgba(36, 22, 10, 0.38)), url(${heroImage})` }}>
           <p className="hero-badge">Ancient Wisdom • Modern Wellness</p>
-          <h1>Welcome to {siteConfig.siteName}</h1>
-          <p>Transform your life through yoga, mindful breathing, and spiritual discipline.</p>
+          <h1><span>Welcome to</span><strong>{siteConfig.siteName}</strong></h1>
+          <p>Transforming lives through yoga, discipline, breathwork, and spiritual wellness.</p>
           <div className="hero-cta-group">
             <a className="btn btn-primary" href="#programs">Explore Programs</a>
             <a className="btn btn-secondary" href="#contact">Get in Touch</a>
@@ -69,12 +72,18 @@ function App() {
         </section>
 
         <section id="donate" className="section-card donate-section">
-          <div className="donation-card">
-            <h2>Support Our Mission</h2>
-            <p>Your contribution helps us organize free yoga camps and wellness outreach programs.</p>
-            <p className="scan-text">Scan &amp; Donate</p>
-            <img src="/assets/qr_img.png" alt="QR code to donate to Gayatri Yog Gurukulam Foundation" className="qr-image" loading="lazy" />
-            <a href="#contact" className="btn btn-primary">Contribute Now</a>
+          <div className="donation-card premium-layout">
+            <div className="donation-qr-panel">
+              <div className="qr-frame">
+                <img src={donationQrImage} alt="QR code to donate to Gayatri Yog Gurukulam Foundation" className="qr-image" loading="lazy" />
+              </div>
+            </div>
+            <div className="donation-content">
+              <p className="donation-kicker">Wellness • Service • Sadhana</p>
+              <h2>Support Our Mission</h2>
+              <p>Your contribution helps us organize free yoga camps, wellness outreach programs, and spiritual learning initiatives.</p>
+              <p className="scan-text">Scan the QR code to contribute securely.</p>
+            </div>
           </div>
         </section>
 
@@ -83,17 +92,31 @@ function App() {
             <h2>Connect With Us</h2>
             <p>We welcome your support and participation in our wellness mission.</p>
             <div className="contact-links">
-              <a href="mailto:vistraxindia@gmail.com"><FaEnvelope /> vistraxindia@gmail.com</a>
-              <a href="https://wa.me/919675763044" target="_blank" rel="noreferrer"><FaWhatsapp /> 9675763044</a>
-              <a href="tel:+919675763044"><FaPhoneAlt /> 9675763044</a>
-              <a href="https://instagram.com/praveenpathakyoga" target="_blank" rel="noreferrer"><FaInstagram /> @praveenpathakyoga</a>
-              <a href="https://facebook.com/Praveen.pathak.737001" target="_blank" rel="noreferrer"><FaFacebook /> Praveen.pathak.737001</a>
-              <a href="https://youtube.com/@praveenpathakyoga" target="_blank" rel="noreferrer"><FaYoutube /> @praveenpathakyoga</a>
+              <a href="https://instagram.com/praveenpathakyoga" target="_blank" rel="noreferrer" className="contact-item">
+                <FaInstagram />
+                <span><strong>Instagram</strong><small>Follow us on Instagram</small>@praveenpathakyoga</span>
+              </a>
+              <a href="https://facebook.com/Praveen.pathak.737001" target="_blank" rel="noreferrer" className="contact-item">
+                <FaFacebook />
+                <span><strong>Facebook</strong><small>Join our Facebook community</small>Praveen Pathak</span>
+              </a>
+              <a href="https://youtube.com/@praveenpathakyoga" target="_blank" rel="noreferrer" className="contact-item">
+                <FaYoutube />
+                <span><strong>YouTube</strong><small>Watch guided yoga sessions</small>@praveenpathakyoga</span>
+              </a>
+              <a href="mailto:vistraxindia@gmail.com" className="contact-item">
+                <FaEnvelope />
+                <span><strong>Email</strong><small>Reach us anytime</small>vistraxindia@gmail.com</span>
+              </a>
+              <a href="https://wa.me/919675763044" target="_blank" rel="noreferrer" className="contact-item">
+                <FaWhatsapp />
+                <span><strong>WhatsApp</strong><small>Message us directly</small>+91 9675763044</span>
+              </a>
             </div>
           </div>
           <div className="contact-right">
             <div className="owner-image-wrap">
-              <img src="/assets/contact_img.png" alt="Gayatri Yog Gurukulam Foundation instructor portrait" className="owner-image" loading="lazy" />
+              <img src={contactImage} alt="Yoga practitioner in a calm meditative pose" className="owner-image" loading="lazy" />
             </div>
             <blockquote>“Discipline your breath, and the mind discovers peace.”</blockquote>
           </div>
